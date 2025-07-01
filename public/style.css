@@ -1,0 +1,82 @@
+* {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8fafc; /* Slate 50 */
+}
+.main-header {
+  background-color: #10b981; /* Emerald 500 */
+}
+.summary-card {
+  background-color: white;
+  border-radius: 0.75rem; /* 12px */
+  border: 1px solid #e2e8f0; /* Slate 200 */
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+  transition: all 0.3s ease-in-out;
+}
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.07);
+}
+.icon-bg {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+}
+.loader {
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #10b981;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.error-box {
+  background-color: #fee2e2; /* Red 100 */
+  border: 1px solid #fca5a5; /* Red 300 */
+  color: #b91c1c; /* Red 700 */
+}
+.dark-footer {
+  background-color: #0f172a; /* Slate 900 */
+  color: #94a3b8; /* Slate 400 */
+}
+/* Styles for the new explorer card */
+.explorer-card {
+  position: relative;
+  background-color: #e0f2f1; /* Teal 50 */
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.explorer-card .map-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+  pointer-events: none;
+}
+.custom-select {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid #b2dfdb; /* Teal 100 */
+}
