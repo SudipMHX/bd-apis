@@ -50,7 +50,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
-    
+
     <!-- Google Search Console -->
     <meta
       name="google-site-verification"
@@ -108,7 +108,9 @@
             REST API
           </a>
           <a
+            target="_blank"
             href="https://github.com/SudipMHX/bd-apis"
+            rel="noopener"
             class="flex items-center gap-2 text-slate-700 hover:text-yellow-500 transition-colors">
             <svg
               class="text-yellow-500"
@@ -295,7 +297,7 @@
         class="bg-white p-6 rounded-lg border border-slate-200 mb-12">
         <h2 class="text-xl font-bold text-slate-700 mb-4">API Endpoint</h2>
 
-        <div class="grid grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="bg-slate-800 rounded-lg p-6 flex flex-col justify-center">
             <p class="text-sm text-slate-400 mb-2">Get all divisons</p>
             <pre
@@ -314,12 +316,12 @@
           <div class="bg-slate-800 rounded-lg p-6 flex flex-col justify-center">
             <p class="text-sm text-slate-400 mb-2">Get all upazilas</p>
             <pre
-              class="bg-slate-900 p-4 rounded-md text-emerald-400 overflow-x-auto"><code>/geo/v1.0/upazillas</code></pre>
+              class="bg-slate-900 p-4 rounded-md text-emerald-400 overflow-x-auto"><code>/geo/v1.0/upazilas</code></pre>
           </div>
           <div class="bg-slate-800 rounded-lg p-6 flex flex-col justify-center">
             <p class="text-sm text-slate-400 mb-2">Get upazilas by district</p>
             <pre
-              class="bg-slate-900 p-4 rounded-md text-emerald-400 overflow-x-auto"><code>/geo/v1.0/upazillas/{districts}</code></pre>
+              class="bg-slate-900 p-4 rounded-md text-emerald-400 overflow-x-auto"><code>/geo/v1.0/upazilas/{districts}</code></pre>
           </div>
         </div>
       </section>
@@ -416,12 +418,33 @@
             </ul>
           </div>
         </div>
-        <div class="border-t border-slate-700 mt-8 pt-6 text-center text-xs">
-          <p>Made with ❤️ for Bangladesh</p>
+        <div
+          class="border-t border-slate-700 mt-8 pt-6 text-center text-xs text-slate-400">
+          <p>
+            Developed with ❤️ by
+            <a
+              href="https://github.com/sudipmhx"
+              class="text-blue-400 hover:underline"
+              target="_blank"
+              rel="noopener"
+              >Mahatab Hossen Sudip</a
+            >
+            | &copy; <span id="year"></span>
+            <a
+              href="https://bdapis.vercel.app/"
+              class="text-blue-400 hover:underline"
+              target="_blank"
+              rel="noopener"
+              >BD APIs</a
+            >
+          </p>
         </div>
       </div>
     </footer>
 
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
     <script src="./main.js"></script>
   </body>
 </html>
