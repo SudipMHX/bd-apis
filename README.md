@@ -15,24 +15,26 @@ A simple and fast REST API to access all divisions, districts, and upazilas of B
 
 All endpoints are prefixed with `/geo/v1.0`.
 
-| Endpoint                                 | Description                        |
-|-------------------------------------------|------------------------------------|
-| `/geo/v1.0/divisions`                    | Get all divisions                  |
-| `/geo/v1.0/districts`                    | Get all districts                  |
-| `/geo/v1.0/districts/{division}`         | Get districts by division          |
-| `/geo/v1.0/upazillas`                    | Get all upazilas                   |
-| `/geo/v1.0/upazillas/{district}`         | Get upazilas by district           |
+| Endpoint                         | Description               |
+| -------------------------------- | ------------------------- |
+| `/geo/v1.0/divisions`            | Get all divisions         |
+| `/geo/v1.0/districts`            | Get all districts         |
+| `/geo/v1.0/districts/{division}` | Get districts by division |
+| `/geo/v1.0/upazilas`             | Get all upazilas          |
+| `/geo/v1.0/upazilas/{district}`  | Get upazilas by district  |
 
 ### Example
 
 Get all districts in the "Dhaka" division:
+
 ```
 GET /geo/v1.0/districts/Dhaka
 ```
 
 Get all upazilas in the "Gazipur" district:
+
 ```
-GET /geo/v1.0/upazillas/Gazipur
+GET /geo/v1.0/upazilas/Gazipur
 ```
 
 ## Project Structure
@@ -64,4 +66,7 @@ bd-apis/
 
 ---
 
-Made with ❤️
+<div align="center">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=bdapis.vercel.app">
+    <p>Made with ❤️</p>
+</div>
