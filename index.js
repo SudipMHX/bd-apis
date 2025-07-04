@@ -1,8 +1,13 @@
 import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import dotenv from "dotenv";
+dotenv.config();
 
-import geoRoutes from "./src/routes/geo.js";
+import { connectDB } from "./src/config/db.js";
+
+import geoV1Routes from "./src/routes/v1/geo.js";
+import geoV2Routes from "./src/routes/v2/geo.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -11,9 +16,6 @@ const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// API prefix for the Bangladesh Geo Data API
-const GEO_API_PREFIX = "/geo/v1.0";
-
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public"))); // Static files
 
@@ -21,7 +23,9 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.use(`${GEO_API_PREFIX}`, geoRoutes);
+// BD APIs Geo Routes
+app.use(`/geo/v1.0`, geoV1Routes);
+app.use(`/geo/v2.0`, geoV2Routes);
 
 app.use((req, res) => {
   res.status(404).json({
@@ -30,6 +34,9 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`bdapis server is running on http://localhost:${PORT}`);
+// Connect to MongoDB and start server
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`✅ — server running on : ${PORT}`);
+  });
 });

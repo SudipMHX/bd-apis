@@ -1,5 +1,5 @@
 import express from "express";
-import bdGeoData from "../database/data.js";
+import bdGeoData from "../../database/data.js";
 
 const router = express.Router();
 

@@ -1,7 +1,7 @@
 {
   "name": "bd-apis",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "A free and open-source REST API providing up-to-date administrative and geographical data of Bangladesh, including divisions, districts, upazilas, and more.",
   "license": "ISC",
   "author": "Mahatab Hossen Sudip",
   "type": "module",
@@ -12,7 +12,11 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
+    "dotenv": "^17.0.1",
     "express": "^5.1.0",
+    "mongoose": "^8.16.1"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.10"
   }
 }
