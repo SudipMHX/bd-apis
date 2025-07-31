@@ -1,5 +1,6 @@
 * {
   scroll-behavior: smooth;
+  outline: none;
 }
 body {
   font-family: "Inter", sans-serif;

@@ -6,8 +6,8 @@ dotenv.config();
 
 import { connectDB } from "./src/config/db.js";
 
-import geoV1Routes from "./src/routes/v1/geo.js";
-import geoV2Routes from "./src/routes/v2/geo.js";
+import geoV1Routes from "./src/routes/geo/geo.js";
+import geoV2Routes from "./src/routes/geo/geo-v2.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,8 +19,12 @@ const __dirname = path.dirname(__filename);
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public"))); // Static files
 
+// front-end
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+app.get("/geo-api-v1", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "v1.html"));
 });
 
 // BD APIs Geo Routes
